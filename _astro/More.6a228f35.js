@@ -1,0 +1,119 @@
+import{j as n}from"./jsx-runtime.391947bd.js";import{u as l}from"./index.ab4330ae.js";import{m as e}from"./about.38837ab5.js";import{i as c}from"./languageStore.50a1028f.js";import"./index.ed373d49.js";import"./projects.ec14e2ed.js";const i=()=>{const r=l(c),t=r?e.career.head.english:e.career.head.spanish,s=r?e.career.content.english:e.career.content.spanish;return n.jsx("div",{className:`\r
+            p-3\r
+            h-full\r
+            flex\r
+            items-center\r
+            justify-center\r
+            `,children:r?n.jsxs("div",{children:[n.jsx("p",{className:`\r
+                        font-medium\r
+                        text-xl\r
+                        text-center\r
+                        `,children:t}),n.jsx("p",{className:`\r
+                        font-bold\r
+                        text-6xl\r
+                        text-center\r
+\r
+                        md:text-7xl\r
+                        `,children:s})]}):n.jsxs("div",{children:[n.jsx("p",{className:`\r
+                        font-bold\r
+                        text-6xl\r
+                        text-center\r
+\r
+                        md:text-7xl\r
+                        `,children:s}),n.jsx("p",{className:`\r
+                        font-medium\r
+                        text-xl\r
+                        text-center\r
+                        `,children:t})]})})},x=()=>{const r=l(c),t=r?e.age.head.english:e.age.head.spanish,s=r?e.age.content.english:e.age.content.spanish;return n.jsxs("div",{className:`\r
+            p-3\r
+            h-full\r
+            flex\r
+            items-center\r
+            justify-center\r
+            flex-col\r
+            `,children:[n.jsx("p",{className:`\r
+                font-bold\r
+                text-6xl\r
+                text-center\r
+\r
+                md:text-7xl\r
+                `,children:t}),n.jsx("p",{className:`\r
+                font-medium\r
+                text-xl\r
+                `,children:s})]})},a=()=>{const r=l(c),t=r?e.projectsCreated.head.english:e.projectsCreated.head.spanish,s=r?e.projectsCreated.content.english:e.projectsCreated.content.spanish;return n.jsxs("div",{className:`\r
+            p-3\r
+            h-full\r
+            flex\r
+            gap-2\r
+            items-center\r
+            justify-center\r
+            flex-col\r
+            `,children:[n.jsx("p",{className:`\r
+                font-bold\r
+                text-6xl\r
+                text-center\r
+\r
+                md:text-7xl\r
+                `,children:t}),n.jsx("p",{className:`\r
+                font-semibold\r
+                text-sm\r
+\r
+                md:text-lg\r
+                `,children:s})]})},o=()=>{const t=l(c)?e.englishLevel.english:e.englishLevel.spanish;return n.jsxs("div",{className:`\r
+            p-3\r
+            h-full\r
+            flex\r
+            items-center\r
+            justify-center\r
+            flex-col\r
+            `,children:[n.jsx("p",{className:`\r
+                font-medium\r
+                text-xl\r
+                `,children:t}),n.jsx("p",{className:`\r
+                font-bold\r
+                text-6xl\r
+                text-center\r
+\r
+                md:text-7xl\r
+                `,children:"B2"})]})},d=({slides:r=[]})=>n.jsx("div",{className:`\r
+            overflow-hidden\r
+            h-full\r
+            `,children:n.jsx("div",{className:`\r
+                slide-track\r
+                grid\r
+                grid-rows-3\r
+                grid-cols-2\r
+                `,children:r.map((t,s)=>n.jsx("div",{className:`\r
+                            `,children:t},s))})}),h=()=>n.jsxs("div",{className:`\r
+            p-3\r
+            h-full\r
+            flex\r
+            items-center\r
+            justify-center\r
+            flex-col\r
+            `,children:[n.jsx("p",{className:`\r
+                font-medium\r
+                text-xl\r
+                `,children:"Anzoátegui"}),n.jsx("p",{className:`\r
+                font-bold\r
+                text-6xl\r
+                text-center\r
+\r
+                md:text-7xl\r
+                `,children:"VNZ"})]}),m=()=>{const t=l(c)?e.spanishLevel.english:e.spanishLevel.spanish;return n.jsxs("div",{className:`\r
+            p-3\r
+            h-full\r
+            flex\r
+            items-center\r
+            justify-center\r
+            flex-col\r
+            `,children:[n.jsx("p",{className:`\r
+                font-medium\r
+                text-xl\r
+                `,children:t}),n.jsx("p",{className:`\r
+                font-bold\r
+                text-6xl\r
+                text-center\r
+\r
+                md:text-7xl\r
+                `,children:"NAT"})]})},j=[n.jsx(i,{}),n.jsx(a,{}),n.jsx(m,{}),n.jsx(o,{}),n.jsx(x,{}),n.jsx(h,{})],A=()=>n.jsx(d,{slides:j});export{A as More};

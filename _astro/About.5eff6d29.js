@@ -1,0 +1,71 @@
+import{j as r}from"./jsx-runtime.391947bd.js";import{u as c}from"./index.ab4330ae.js";import{a as e}from"./about.38837ab5.js";import{i as d}from"./languageStore.50a1028f.js";import{G as m}from"./Github.7cc86921.js";import{r as i}from"./index.ed373d49.js";import{S as h}from"./Skeleton.c5ac5f1f.js";import"./projects.ec14e2ed.js";const p=()=>r.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",className:"h-full text-inherit",fill:"currentColor",viewBox:"2 2 47 47",children:r.jsx("path",{d:"M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18,35h-4V20h4V35z M16,17 c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2s2,0.895,2,2C18,16.105,17.105,17,16,17z M37,35h-4v-5v-2.5c0-1.925-1.575-3.5-3.5-3.5 S26,25.575,26,27.5V35h-4V20h4v1.816C27.168,20.694,28.752,20,30.5,20c3.59,0,6.5,2.91,6.5,6.5V35z"})}),x={src:"/_astro/Me.934f9bd3.png",width:120,height:120,format:"png"},o=["portrait-radial-gradient","portrait-repeating-radial-gradient","portrait-repeating-conic-gradient"],g=()=>{const[t,s]=i.useState(!0);let n=0;i.useEffect(()=>{document.getElementById("portrait-image").complete===!0&&s(!1)},[]);const l=()=>{const a=document.getElementById("me-portrait");a.classList.remove(o[n]),n+1<o.length?n+=1:n=0,a.classList.add(o[n]),console.log(n)};return r.jsxs("div",{className:`\r
+                overflow-hidden\r
+                rounded-full\r
+                h-full\r
+                w-full\r
+                relative\r
+            `,children:[r.jsx("button",{id:"me-portrait",className:`\r
+                    portrait-radial-gradient\r
+                    p-1\r
+                    duration-100\r
+\r
+                    hover:p-0\r
+                `,onClick:()=>l(),style:{opacity:t?"0":"1"},children:r.jsx("img",{id:"portrait-image",loading:"lazy",decoding:"async",className:`\r
+                        w-full\r
+                        h-full\r
+                        object-cover\r
+                        opacity-95\r
+                        rounded-full\r
+                    `,src:x.src})}),r.jsx(h,{isLoading:t})]})},y=()=>{const t=c(d),s=t?e.head.english:e.head.spanish,n=t?e.content.english:e.content.spanish;return r.jsxs("div",{className:`\r
+            flex\r
+            h-full\r
+            flex-col\r
+            p-3\r
+\r
+            gap-5\r
+            md:p-5\r
+            `,children:[r.jsxs("div",{className:`\r
+                flex\r
+                gap-5\r
+                `,children:[r.jsx("div",{className:`\r
+                        flex\r
+                        grow\r
+                    `,children:r.jsx("h1",{className:`\r
+                            self-center\r
+                            text-wrap\r
+                            font-semibold\r
+                            text-xl\r
+\r
+                            md:text-2xl\r
+                            `,children:s})}),r.jsx("div",{className:`\r
+                        min-w-[80px]\r
+                        min-h-[80px]\r
+                        max-w-[80px]\r
+                        max-h-[80px]\r
+\r
+                        md:min-w-[120px]\r
+                        md:min-h-[120px]\r
+                        md:max-h-[120px]\r
+                    `,children:r.jsx(g,{})})]}),r.jsx("div",{className:"grow",children:r.jsx("p",{children:n})}),r.jsxs("div",{className:`\r
+                    flex\r
+                    justify-center\r
+                    gap-20\r
+                    min-h-[24px]\r
+                `,children:[r.jsx("a",{target:"_blank",href:"https://github.com/16SAGG",className:`\r
+                        duration-200\r
+\r
+                        hover:text-[#344399]\r
+                        dark:hover:text-[#7256FF]\r
+                    `,children:r.jsx(m,{})}),r.jsx("a",{href:"https://drive.google.com/uc?export=download&id=1TA7_0ys48XRgoCQjHzD53QIKZNDHHs58",className:`\r
+                        text-lg\r
+                        font-bold\r
+                        duration-200\r
+\r
+                        hover:text-[#344399]\r
+                        dark:hover:text-[#7256FF]\r
+                    `,children:"CV"}),r.jsx("a",{target:"_blank",href:"https://www.linkedin.com/in/sagg1608",className:`\r
+                        duration-200\r
+\r
+                        hover:text-[#344399]\r
+                        dark:hover:text-[#7256FF]\r
+                    `,children:r.jsx(p,{})})]})]})};export{y as About};
