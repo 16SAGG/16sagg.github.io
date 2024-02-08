@@ -1,0 +1,119 @@
+---
+import { Arrow, CircleArrow } from "../media/icons/Arrow";
+import BentoBox from "./BentoBox.astro";
+
+---
+
+<BentoBox>
+    <div
+        class="
+        flex
+        items-center
+        justify-center
+        h-full
+        p-9
+        "
+    >
+        <div
+            class="
+            w-full
+            h-full
+            hidden
+
+            dark:block
+            "
+        >
+            <div
+                class="
+                return-circle-dark
+                flex
+                items-center
+                justify-center
+                relative
+                overflow-hidden
+                h-full
+                w-full
+                rounded-full
+                "
+            >
+                <div
+                    class="
+                    absolute
+                    w-10
+                    h-13
+                    text-[#1D1C20]
+                    "
+                >
+                    <Arrow/>
+                </div>
+
+                <div
+                    class="
+                    absolute
+                    bottom-[133px]
+                    left-[141px]
+                    w-10
+                    h-13
+                    text-[#FDFDFD]
+
+                    md:bottom-[146px]
+                    md:left-[154px]
+                    "
+                >
+                    <Arrow/>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="
+            w-full
+            h-full
+            block
+
+            dark:hidden
+            "
+        >
+            <div
+                class="
+                return-circle
+                flex
+                items-center
+                justify-center
+                relative
+                overflow-hidden
+                h-full
+                w-full
+                rounded-full
+                "
+            >
+                <div
+                    class="
+                    absolute
+                    w-10
+                    h-13
+                    text-[#FDFDFD]
+                    "
+                >
+                    <Arrow/>
+                </div>
+
+                <div
+                    class="
+                    absolute
+                    bottom-[133px]
+                    left-[141px]
+                    w-10
+                    h-13
+                    text-[#0F0F12]
+
+                    md:bottom-[146px]
+                    md:left-[154px]
+                    "
+                >
+                    <Arrow/>
+                </div>
+            </div>
+        </div>
+    </div>
+</BentoBox>

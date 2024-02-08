@@ -1,0 +1,34 @@
+export const Direction = ()=>{
+    return(
+        <div
+            className="
+            p-3
+            h-full
+            flex
+            items-center
+            justify-center
+            flex-col
+            "
+        >
+            <p
+                className="
+                font-medium
+                text-xl
+                "
+            >
+                Anzoátegui
+            </p>
+            <p 
+                className="
+                font-bold
+                text-6xl
+                text-center
+
+                md:text-7xl
+                "
+            >
+                VNZ
+            </p>
+        </div>
+    )
+}

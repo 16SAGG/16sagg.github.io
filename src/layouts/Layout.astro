@@ -1,0 +1,286 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body 
+		class="
+		dark
+		"
+	>
+		<div 
+			class="
+			bg-[#E7E8ED]
+			dark:bg-[#0F0F12]
+			"
+		>
+			<main 
+				class="
+				flex
+				flex-col
+				justify-center
+				min-h-[100svh]
+				max-w-xs
+				m-auto
+				
+				md:max-w-3xl
+				"
+			>
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+
+	::-webkit-scrollbar{
+		background:#1D1C20;
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #7256FF;
+	}
+
+	.first-star, .icon-container, .dropdown-cover{
+		transform-style: preserve-3d;
+		transition: transform 0.3s ease-out;
+	}
+
+	#projects:hover .first-star{
+    	transform: translate3d(120px, 120px, 0px) scale3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(45deg);
+	}
+
+	.second-star {
+		transform: translate3d(0px, 0px, 0px) scale3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(45deg);
+		transform-style: preserve-3d;
+		transition: transform 0.3s ease-out;
+	}
+
+	#projects:hover .second-star{
+    	transform: translate3d(120px, 120px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	}
+
+	.arrow {
+		transform: translate3d(0px, 0px, 0px) rotateZ(225deg);
+		transform-style: preserve-3d;
+		transition: transform 0.3s ease-out;
+	}
+
+	#return:hover .arrow{
+		transform: translate3d(-120px, 120px, 0px) rotateZ(225deg);
+	}
+
+	.return-circle, .return-circle-dark{
+		transition: background-color 0.3s ease-out;
+	}
+	
+	.return-circle{
+		background-color: #0F0F12;
+	}
+
+	#return:hover .return-circle{
+		background-color: #FDFDFD;
+	}
+
+	.return-circle-dark{
+		background-color: #FDFDFD;
+	}
+
+	#return:hover .return-circle-dark{
+		background-color: #1D1C20;
+	}
+
+	
+	.dropdown:hover .dropdown-cover{
+		transform: translate3d(0px, 128px, 0px);
+	}
+
+	.project-item-image{
+		transform-style: preserve-3d;
+		transition: all 0.2s ease-out;
+	}
+
+	.project-item:hover .project-item-image{
+		top: 35%;
+		left: 7.5%;
+		width: 85%;
+		height: 65%;
+	}
+
+	.icon-text{
+		opacity: 0;
+		transition: opacity 0.3s ease-out;
+	}
+
+	.icon-box:hover .icon-container{
+		transform: scale3d(0.5, 0.5, 0.5) rotateZ(360deg);
+	}
+
+	.icon-box:hover .icon-text{
+		opacity: 1;
+	}
+
+	.slide-track{
+		animation: scroll 20s linear infinite;
+		-webkit-animation: scroll 20s linear infinite;
+		width: calc(154px * 2);
+		height: calc(154px * 3);
+	}
+
+	@keyframes scroll{
+		0%, 14%{
+			-webkit-transform: translateX(0) translateY(0);
+			transform: translateX(0) translateY(0);
+		}
+		16%, 30%{
+			-webkit-transform: translateX(calc(-154px * 1)) translateY(0);
+			transform: translateX(calc(-154px * 1)) translateY(0);
+		}
+		32%, 46%{
+			-webkit-transform: translateX(calc(-154px * 1)) translateY(calc(-154px * 1));
+			transform: translateX(calc(-154px * 1)) translateY(calc(-154px * 1));
+		}
+		48%, 62%{
+			-webkit-transform: translateX(0) translateY(calc(-154px * 1));
+			transform: translateX(0) translateY(calc(-154px * 1));
+		}
+		64%, 78%{
+			-webkit-transform: translateX(0) translateY(calc(-154px * 2));
+			transform: translateX(0) translateY(calc(-154px * 2));
+		}
+		80%, 94%{
+			-webkit-transform: translateX(calc(-154px * 1)) translateY(calc(-154px * 2));
+			transform: translateX(calc(-154px * 1)) translateY(calc(-154px * 2));
+		}
+		96%, 100%{
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+		}
+	}
+
+	#clock:hover .time-display {
+		transform: translate3d(0px, 60px, 0px) scale3d(0.4, 0.4, 0.4);
+	}
+
+	#pixel-art {
+		opacity: 0.5;
+	}
+
+	#clock:hover #pixel-art {
+		opacity: 1;
+	}
+
+	.flickering {
+		animation: blink 1s infinite;
+		-webkit-animation: blink 1s infinite;
+		opacity: 0;
+	}
+
+	@keyframes blink{
+		0%, 25%{
+			opacity: 100;
+		}
+		25.1%, 75%{
+			opacity: 0;
+		}
+		75.1%, 100%{
+			opacity: 100;
+		}
+	}
+
+	.portrait-radial-gradient{
+		background-image: radial-gradient(circle 60px, #7256FF, #344399);
+	}
+
+	.portrait-repeating-radial-gradient{
+		background-image: repeating-radial-gradient(circle at center, #7256FF 0% 15%, #344399 17% 25%);
+	}
+
+	.portrait-repeating-conic-gradient{
+		background-image: repeating-conic-gradient(from 0deg, #7256FF 0deg 20deg, #344399 20.5deg 40deg);
+	}
+
+	@media (min-width: 768px){
+		.dropdown:hover .dropdown-cover{
+			transform: translate3d(0px, 150px, 0px);
+		}
+		.slide-track{
+			animation: scroll 20s linear infinite;
+			-webkit-animation: scroll 20s linear infinite;
+			width: calc(180px * 2);
+			height: calc(180px * 3);
+		}
+
+		@keyframes scroll{
+			0%, 14%{
+				-webkit-transform: translateX(0) translateY(0);
+				transform: translateX(0) translateY(0);
+			}
+			16%, 30%{
+				-webkit-transform: translateX(calc(-180px * 1)) translateY(0);
+				transform: translateX(calc(-180px * 1)) translateY(0);
+			}
+			32%, 46%{
+				-webkit-transform: translateX(calc(-180px * 1)) translateY(calc(-180px * 1));
+				transform: translateX(calc(-180px * 1)) translateY(calc(-180px * 1));
+			}
+			48%, 62%{
+				-webkit-transform: translateX(0) translateY(calc(-180px * 1));
+				transform: translateX(0) translateY(calc(-180px * 1));
+			}
+			64%, 78%{
+				-webkit-transform: translateX(0) translateY(calc(-180px * 2));
+				transform: translateX(0) translateY(calc(-180px * 2));
+			}
+			80%, 94%{
+				-webkit-transform: translateX(calc(-180px * 1)) translateY(calc(-180px * 2));
+				transform: translateX(calc(-180px * 1)) translateY(calc(-180px * 2));
+			}
+			96%, 100%{
+				-webkit-transform: translateX(0);
+				transform: translateX(0);
+			}
+		}
+	}
+</style>

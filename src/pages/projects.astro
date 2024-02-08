@@ -1,0 +1,79 @@
+---
+import BentoBox from '../components/BentoBox.astro';
+import BentoGrid from '../components/BentoGrid.astro';
+import Layout from '../layouts/Layout.astro';
+import {ProjectsLink} from '../components/projects/ProjectsLink.jsx';
+import { Settings } from '../components/Settings';
+import Go from '../components/Go.astro';
+import { ShowingProjectsOf } from '../components/projects/ShowingProjectsOf.jsx';
+import { projectRepository } from '../data/projects';
+import { ProjectItem } from '../components/projects/ProjectItem.jsx';
+---
+
+<Layout title="Projects - SAGG">
+	<div 
+		class="
+		md:py-7
+		"
+	>
+		<BentoGrid>
+			<a 
+				id="return"
+				href="/"
+				class="
+				overflow-hidden
+
+				md:col-start-1
+				md:row-start-3
+				"
+			>
+				<Go/>
+			</a>
+
+			<section>
+				<Settings client:load/>
+			</section>
+
+			<section
+				class="
+				col-span-2
+
+				md:col-start-2
+				md:row-start-1
+				"
+			>
+				<BentoBox>
+					<ShowingProjectsOf client:load/>
+				</BentoBox>
+			</section>
+			
+			<section
+				id="projects"
+				class="
+				col-span-2
+				overflow-hidden
+
+				md:row-start-1
+				md:col-span-1
+				md:row-span-2
+				"
+			>
+				<BentoBox>
+					<ProjectsLink isLink={false} client:load/>
+				</BentoBox>
+			</section>
+
+			{
+				projectRepository.map((project) =>
+					<ProjectItem
+						id = {project.id}
+						title={project.title}
+						image={project.image}
+						technologies={project.technologies}
+						client:load
+					></ProjectItem>
+				)
+			}
+		</BentoGrid>
+	</div>
+</Layout>

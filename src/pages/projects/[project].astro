@@ -1,0 +1,178 @@
+---
+import BentoBox from '../../components/BentoBox.astro';
+import BentoGrid from '../../components/BentoGrid.astro';
+import Layout from '../../layouts/Layout.astro';
+import { projectRepository } from "../../data/projects" 
+import { Settings } from '../../components/Settings';
+import Go from '../../components/Go.astro';
+import { Title } from '../../components/Title';
+import { Paragraph } from '../../components/Paragraph';
+import {IconBox} from '../../components/IconBox.jsx';
+import { ImageBox } from '../../components/ImageBox';
+
+export function getStaticPaths() {
+	return [
+		{params: {project: "0"}},
+		{params: {project: "1"}},
+		{params: {project: "2"}},
+		{params: {project: "3"}},
+		{params: {project: "4"}},
+		{params: {project: "5"}},
+  	];
+}
+
+const {project} = Astro.params
+
+const information = projectRepository.find(p => p.id === project)
+
+const informationDoesNotExist = information === undefined
+if (informationDoesNotExist) return Astro.redirect("/404")
+---
+
+<Layout title={information.title.english}>
+	<div 
+		class="
+		md:py-7
+		"
+	>
+		<BentoGrid>
+			<a 
+				id="return"
+				href="/projects"
+				class="
+				md:col-start-1
+				md:row-start-3
+				"
+			>
+				<Go/>
+			</a>
+
+			<section>
+				<Settings client:load/>
+			</section>
+
+			<section
+				class="
+				col-span-2
+
+				md:col-start-2
+				md:row-start-1
+				"
+			>
+				<BentoBox>
+					<ImageBox 
+						id={`ìmage-${information.id}`} 
+						image={information.image}
+						client:load
+					/>
+				</BentoBox>
+			</section>
+
+			<section
+				class="
+				col-span-2
+
+				md:row-start-1
+				md:col-span-1
+				md:row-span-2
+				"
+			>
+				<BentoBox>
+					<Title 
+						titleEN = {information.title.english} 
+						titleES = {information.title.spanish} 
+						client:load
+					/>
+				</BentoBox>
+			</section>
+
+			<section
+				class="
+				col-span-2
+				row-span-2
+				"
+			>
+				<BentoBox>
+					<div
+						class="
+						rounded-xl
+						overflow-hidden
+						"
+					>
+						<div
+							class="
+							flex
+							flex-col
+							gap-4
+							p-5
+							overflow-auto
+							max-h-[320px]
+							
+							md:max-h-[376px]
+							"
+						>
+							{
+								information.description.map((paragraph) =>
+									<Paragraph
+										paragraphEN = {paragraph.english}
+										paragraphES= {paragraph.spanish}
+										client:load
+									/>
+								)
+							}
+						</div>
+					</div>
+				</BentoBox>
+			</section>
+
+			{(information.url !== "/") ?
+				<a 
+					id="return"
+					href={information.url}
+					class="
+					rotate-180
+					"
+					target="_blank"
+				>
+					<Go/>
+				</a>
+				:
+				<div class="hidden"></div>
+			}
+			
+			{
+				information.technologies.map((technology) =>
+					<a
+						class="icon-box"
+						href={(technology.name === "GitHub") ? information.githubUrl : `/projects/#${technology.name}`}
+						target={(technology.name === "GitHub") ? "_blank" : ""}
+					>
+						<BentoBox>
+							{
+								(technology.name === "GitHub") ? 
+									<IconBox iconName={technology.name} client:load/> 
+								:
+									<div class="
+										h-full
+										flex
+										items-center
+										justify-center
+										text-lg
+                        				font-bold
+
+										duration-200
+										hover:text-[#344399]
+										dark:hover:text-[#7256FF]
+									">
+										<h2>
+											{technology.name}
+										</h2>
+									</div>
+							}
+						</BentoBox>
+					</a>
+				)
+			}
+		</BentoGrid>
+	</div>
+</Layout>

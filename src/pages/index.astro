@@ -1,0 +1,87 @@
+---
+import {About} from '../components/About.jsx'
+import {ProjectsLink} from '../components/projects/ProjectsLink.jsx';
+import {Settings} from '../components/Settings.jsx';
+import {More} from '../components/More.jsx';
+import {Clock} from '../components/Clock.jsx';
+import Contact from '../components/Contact.astro';
+import TechnicalSkills from '../components/TechnicalSkills.astro';
+import Layout from '../layouts/Layout.astro';
+import BentoBox from '../components/BentoBox.astro';
+import BentoGrid from '../components/BentoGrid.astro';
+
+---
+
+<Layout title="Samuel González - SAGG">
+	<BentoGrid>
+		<div 
+			class="
+			row-span-2
+			col-span-2
+			
+			md:col-start-2
+			"
+		>
+			<BentoBox>
+				<About client:load/>
+			</BentoBox>
+		</div>
+		
+		<a 
+			id="projects"
+			href="/projects/"
+			class="
+			col-span-2
+			overflow-hidden
+
+			md:row-start-1
+			md:col-span-1
+			md:row-span-2
+			"
+		>
+			<BentoBox>
+				<ProjectsLink client:load/>
+			</BentoBox>
+		</a>
+
+		<Settings client:load/>
+
+		<BentoBox>
+			<More client:load/>
+		</BentoBox>
+
+		<div 
+			class="
+			col-span-2
+			"
+		>
+			<BentoBox>
+				<Contact/>
+			</BentoBox>
+		</div>
+		
+		<div
+			id="clock"
+			class="
+
+			md:col-start-1
+            md:row-start-3
+			"
+		>
+			<BentoBox>
+				<Clock client:load/>
+			</BentoBox>
+		</div>
+			
+		<a 
+			class="
+			md:col-start-2
+			md:row-start-3
+			"
+		>
+			<BentoBox>
+				<TechnicalSkills/>
+			</BentoBox>
+		</a>
+	</BentoGrid>
+</Layout>
