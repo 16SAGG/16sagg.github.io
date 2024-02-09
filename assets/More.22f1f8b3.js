@@ -1,4 +1,4 @@
-import{j as n}from"./jsx-runtime.391947bd.js";import{u as l}from"./index.ab4330ae.js";import{m as e}from"./about.7018f9d8.js";import{i as c}from"./languageStore.50a1028f.js";import"./index.ed373d49.js";import"./projects.c0404237.js";const i=()=>{const r=l(c),t=r?e.career.head.english:e.career.head.spanish,s=r?e.career.content.english:e.career.content.spanish;return n.jsx("div",{className:`\r
+import{j as n}from"./jsx-runtime.391947bd.js";import{u as l}from"./index.ab4330ae.js";import{m as e}from"./about.7eadf3d8.js";import{i as c}from"./languageStore.50a1028f.js";import"./index.ed373d49.js";import"./projects.1c26a261.js";const i=()=>{const r=l(c),t=r?e.career.head.english:e.career.head.spanish,s=r?e.career.content.english:e.career.content.spanish;return n.jsx("div",{className:`\r
             p-3\r
             h-full\r
             flex\r
