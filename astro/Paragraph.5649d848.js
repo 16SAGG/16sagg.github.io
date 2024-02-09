@@ -1,0 +1,1 @@
+import{j as s}from"./jsx-runtime.391947bd.js";import{u as t}from"./index.ab4330ae.js";import{i as a}from"./languageStore.50a1028f.js";import"./index.ed373d49.js";const h=({paragraphEN:r="Paragraph",paragraphES:o="Párrafo"})=>{const i=t(a)?r:o;return s.jsx("p",{children:i})};export{h as Paragraph};
